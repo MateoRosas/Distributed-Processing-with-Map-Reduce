@@ -13,5 +13,5 @@ def manageYear(date):
 
 for line in sys.stdin:
   arreglo = line.strip().split(",")
-  dato = manageYear(arreglo[2]),int(arreglo[1])
-  print(str(dato)[1:-1])
+  dato = manageYear(arreglo[2])
+  print '%s\t%s' % (dato, 1)
