@@ -2,19 +2,17 @@
 import sys
 
 cabecera = sys.stdin.readline()
-print(cabecera.strip().split(","))
-countYear = []
-dateTransfer =[]
+dict1 = {}
+cont = 1
 for line in sys.stdin:
-  arreglo = line.strip().split(",")
-  dateTransfer.append(arreglo[2])
+    word = line.strip().split(",")
+    #print(word[1])
+    if word[0] in dict1:
+      dict1[word[0]] += 1
+    else:
+      dict1[word[0]] = 1
 
-for i in dateTransfer:
-  date, hour = i.strip().split(" ")
-  year, month, day = date.strip().split("-")
-  countYear.append(year)
-
-years_s = [str(i) for i in range(1994, 2018, 1)]
-for i in years_s:
-  repetidos = countYear.count(i)
-  print(i, repetidos)
+for key, value in dict1.iteritems():
+  print(key, value)
+      
+    
