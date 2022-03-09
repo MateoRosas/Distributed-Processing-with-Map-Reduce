@@ -1,12 +1,12 @@
-# -*- coding: utf-8 -*-
 import sys
 
 cabecera = sys.stdin.readline()
-busqueda = "STAMFORD"
-busqueda_year ="2015"
-count = 0
-data_p = []
-print(cabecera.strip().split(","))
+#busqueda = "STAMFORD"
+#busqueda_year ="2015"
+
+busqueda = "BRISTOL"
+busqueda_year = "1995"
+
 
 def manageYear(date):
   date_s, hour = date.strip().split(" ")
@@ -15,18 +15,14 @@ def manageYear(date):
 
 def findMoneyCity(name, year, money):
   if name == busqueda and year == busqueda_year:
-    return name, year, int(money)
-
+    return name, int(year), int(money)
+  else:
+    return None, None, None
 
 for line in sys.stdin:
   arreglo = line.strip().split(",")
-  #print(arreglo[1], arreglo[2], arreglo[6])
   anne = manageYear(arreglo[2])
-  if findMoneyCity(arreglo[6], anne, arreglo[1]) != None:
-    data_p.append(findMoneyCity(arreglo[6], anne, arreglo[1]))
-
-data_p.sort(key=lambda x: x[2], reverse = False)
-
-
-for i in data_p:
-  print(i)
+  #print("{}\t{}\t{}" .format(findMoneyCity(arreglo[6], anne, arreglo[1])))
+  #print '%s\t%s\t%s\t%s' % (findMoneyCity(arreglo[6], anne, arreglo[1]))
+  n, y, m  = findMoneyCity(arreglo[6], anne, arreglo[1]) 
+  print '%s\t%s\t%s\t%s' % (n, y, m, 1)
