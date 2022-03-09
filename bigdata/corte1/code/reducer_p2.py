@@ -2,17 +2,24 @@
 import sys
 
 dict1={}
-cont = 1
+num = []
+
+alfa = 0
+
 for line in sys.stdin:
    city = line.split("\t")
    value = int(city[1])
    #print(city[0], int(city[1]))
+   
    if city[0] in dict1:
-    dict1[city[0]] += value/cont
-    cont += 1
+    num.append(value)
+    #alfa += value
+    #print(alfa, len(num), alfa/len(num))
+    dict1[city[0]] += float(value/len(num))
+    
    else:
-    cont = 1
-    dict1[city[0]] = value/cont
+    dict1[city[0]] = float(value)
+    num = []
     
 for key, values in dict1.iteritems():
    print '%s\t%s' % (key, values)
