@@ -4,8 +4,8 @@ cabecera = sys.stdin.readline()
 #busqueda = "STAMFORD"
 #busqueda_year ="2015"
 
-busqueda = "BRISTOL"
-busqueda_year = "1995"
+busqueda = "STAMFORD"
+busqueda_year = "2015"
 
 
 def manageYear(date):
