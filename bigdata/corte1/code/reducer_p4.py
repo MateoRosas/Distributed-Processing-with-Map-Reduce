@@ -7,7 +7,7 @@ for line in sys.stdin:
   arreglo = line.strip().split("\t")
   if arreglo[0] != "None":
     
-    alfa = str(arreglo[0]),arreglo[2],str(arreglo[1])
+    alfa = str(arreglo[0]),int(arreglo[2]),str(arreglo[1])
     data_p.append(alfa)
 
 data_p.sort(key=lambda x: x[1], reverse = False)
